@@ -2,7 +2,7 @@ import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 
-// firebaseコンソールからコピペ
+// get from firebase console
 var firebaseConfig = {
   apiKey: '',
   authDomain: '',
@@ -38,7 +38,7 @@ export const Authenticator: React.FC<IProps> = (props) => {
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
-      // ログインできた・できなかったに関わらず、初回読み込み時に必ず呼ばれる
+      // Called for the first/every time regardless of login success or failure
       setAuthData({
         user,
         isLoading: false,
