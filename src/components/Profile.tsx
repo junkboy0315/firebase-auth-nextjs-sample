@@ -1,17 +1,17 @@
-import { useAuth0 } from '@auth0/auth0-react';
 import React from 'react';
+import { useAuth } from '../features/auth/useAuth';
 
 export const Profile = () => {
-  const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isLoading } = useAuth();
 
   if (isLoading) {
     return <div>loading profiles...</div>;
   }
 
-  return isAuthenticated ? (
+  return user ? (
     <div>
-      <img src={user.picture} alt={user.name} />
-      <h2>{user.name}</h2>
+      <img src={user.photoURL!} alt={user.displayName!} />
+      <h2>{user.displayName}</h2>
       <p>{user.email}</p>
       <p>{JSON.stringify(user)}</p>
     </div>

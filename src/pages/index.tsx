@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { LoginButton } from 'src/components/LoginButton';
-import { LogoutButton } from 'src/components/LogoutButton';
+import { LogoutButon } from 'src/components/LogoutButton';
 import { Profile } from 'src/components/Profile';
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
 
       <LoginButton />
-      <LogoutButton />
+      <LogoutButon />
       <Profile />
     </div>
   );

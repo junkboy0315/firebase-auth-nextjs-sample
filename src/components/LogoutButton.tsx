@@ -1,8 +1,14 @@
-import { useAuth0 } from '@auth0/auth0-react';
+import * as firebase from 'firebase/app';
 import React from 'react';
 
-export const LogoutButton = () => {
-  const { logout } = useAuth0();
-
-  return <button onClick={() => logout()}>Log Out</button>;
+export const LogoutButon = () => {
+  return (
+    <button
+      onClick={() => {
+        firebase.auth().signOut();
+      }}
+    >
+      Log Out
+    </button>
+  );
 };

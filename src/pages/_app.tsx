@@ -1,15 +1,11 @@
-import { Auth0Provider } from '@auth0/auth0-react';
 import { AppProps } from 'next/app';
+import { Authenticator } from 'src/features/auth/Authenticator';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Auth0Provider
-      domain="yuuniworks.us.auth0.com"
-      clientId="9AlqzSS7ec7XzqheIAjxJqYjYwzO28ow"
-      redirectUri="http://localhost:3000"
-    >
+    <Authenticator>
       <Component {...pageProps} />
-    </Auth0Provider>
+    </Authenticator>
   );
 }
 
